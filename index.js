@@ -10,7 +10,7 @@ import schema from './graphql/';
 
 const app = express();
 const PORT = process.env.PORT || '4000';
-const db = 'mongodb://admin:Askext003@ds157654.mlab.com:57654/graph-ql-demo-db';
+const db = 'mongo-db-connection-string';
 
 // Connect to MongoDB with Mongoose.
 mongoose
