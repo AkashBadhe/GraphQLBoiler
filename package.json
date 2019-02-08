@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"server": "nodemon --exec babel-node index.js cd client ",
+		"server": "nodemon --inspect --exec babel-node index.js cd client ",
 		"client": "cd client && npm start",
 		"start": "concurrently \"npm run client\" \"npm run server\""
 	},
@@ -16,6 +16,10 @@
 		"@babel/cli": "^7.2.3",
 		"@babel/core": "^7.2.2",
 		"@babel/preset-env": "^7.3.1",
+		"apollo-cache-inmemory": "^1.4.2",
+		"apollo-server": "^2.3.3",
+		"apollo-upload-client": "^10.0.0",
+		"app-root-path": "^2.1.0",
 		"body-parser": "^1.18.3",
 		"bootstrap": "^4.2.1",
 		"concurrently": "^4.1.0",
@@ -24,13 +28,17 @@
 		"express-graphql": "^0.7.1",
 		"graphql": "^14.1.1",
 		"graphql-tools": "^4.0.4",
+		"graphql-upload": "^8.0.4",
 		"loadash": "^1.0.0",
+		"lowdb": "^1.0.0",
 		"merge-graphql-schemas": "^1.5.8",
 		"mongoose": "^5.4.7",
 		"nodemailer": "^5.1.1",
 		"nodemon": "^1.18.9",
+		"promises-all": "^1.0.0",
 		"react-bootstrap": "^1.0.0-beta.5",
-		"react-strap": "0.0.1"
+		"react-strap": "0.0.1",
+		"shortid": "^2.2.14"
 	},
 	"devDependencies": {
 		"@babel/node": "^7.2.2"

@@ -1,8 +1,10 @@
 import express from 'express';
 import expressGraphQL from 'express-graphql';
+import { graphqlUploadExpress } from 'graphql-upload';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+const path = require('path');
 
 import schema from './graphql/';
 
@@ -22,10 +24,12 @@ mongoose
 	.then(() => console.log('MongoDB connected'))
 	.catch(err => console.log(err));
 
+app.use('/static', express.static(path.join(__dirname, 'Uploads')));
 app.use(
 	'/graphql',
 	cors(),
 	bodyParser.json(),
+	graphqlUploadExpress({ maxFileSize: 10000000, maxFiles: 10 }),
 	expressGraphQL({
 		schema,
 		graphiql: true
